@@ -1,0 +1,22 @@
+@extends('layouts.master')
+
+{{--Sve sto pise unutar 'content' se prikazuje u layouts folderu, tacnije ovo se prikazuje u masteru @yield('content') i--}}
+{{--zato je to usko povezano mi sa @section napravimo sta ce se sve prikazivati i samo u masteru pozovemo @yield('content')--}}
+{{--i to se prikaze.--}}
+@section('content')
+<main role="main" class="container">
+    <div class="row mt-5">
+@foreach($users as $user)
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4>{{$user->name}}</h4>
+                    <p>{{$user->email}}</p>
+                    <p>Adresa</p>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</main>
+@endsection
